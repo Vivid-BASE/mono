@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    /* White */
+    --foreground: 0 0% 7%;
+    /* Near Black */
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 0 0% 20%;
+
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Gothic Decorative Elements */
+.gothic-border {
+  position: relative;
+  border: 2px solid #111;
+}
+
+.gothic-border::before,
+.gothic-border::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #111;
+}
+
+.gothic-border::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.gothic-border::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Ornamental Divider */
+.ornamental-divider {
+  position: relative;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.ornamental-divider::before,
+.ornamental-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #111, transparent);
+}
+
+.ornamental-divider::before {
+  left: 0;
+}
+
+.ornamental-divider::after {
+  right: 0;
+}
+
+/* Paper Texture */
+.paper-texture {
+  background-image:
+    repeating-linear-gradient(0deg,
+      rgba(17, 17, 17, 0.02) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(17, 17, 17, 0.02) 3px);
+}
+
+/* Ink Bleed Effect */
+.ink-bleed {
+  position: relative;
+  filter: url('#ink-bleed-filter');
+}
+
+/* Vintage Frame */
+.vintage-frame {
+  border: 3px double #111;
+  padding: 1rem;
+  position: relative;
+  background: white;
+}
+
+.vintage-frame::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid #111;
+  pointer-events: none;
+}
+
+/* Elegant Text Shadow */
+.elegant-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.05em;
+}
+
+/* Watercolor Effect (Monochrome) */
+.watercolor-mono {
+  background:
+    radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
+}
+
+/* Lace Pattern */
+.lace-pattern {
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 10px,
+      rgba(17, 17, 17, 0.03) 10px,
+      rgba(17, 17, 17, 0.03) 20px);
+}
+
+/* Custom Scrollbar - White Theme */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-left: 1px solid #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #333 0%, #111 100%);
+  border: 2px solid #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Elegant Hover */
+.elegant-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.elegant-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Gothic Ornament */
+.gothic-ornament {
+  position: relative;
+}
+
+.gothic-ornament::before {
+  content: '◆';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #111;
+  font-size: 12px;
+}
+
+.gothic-ornament::after {
+  content: '◆';
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #111;
+  font-size: 12px;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
