@@ -13,12 +13,12 @@ export const siteConfig = {
 
 export const navItems = [
   { name: "HOME", href: "/" },
-  { name: "NEWS", href: "#news" },
-  { name: "LIVE", href: "#live" },
-  { name: "DISCOGRAPHY", href: "#discography" },
-  { name: "BIOGRAPHY", href: "#biography" },
-  { name: "MOVIE", href: "#movie" },
-  { name: "GOODS", href: "#goods" },
+  { name: "NEWS", href: "/#news" },
+  { name: "LIVE", href: "/#live" },
+  { name: "DISCOGRAPHY", href: "/#discography" },
+  { name: "BIOGRAPHY", href: "/#biography" },
+  { name: "MOVIE", href: "/#movie" },
+  { name: "GOODS", href: "/#goods" },
   { name: "CONTACT", href: "/contact" },
 ];
 
